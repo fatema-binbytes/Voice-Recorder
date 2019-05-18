@@ -69,7 +69,7 @@ export default class Home extends Component {
     });
   }
    _delete(id) {
-    
+    RNFS.unlink(path)
     this.state.data.splice(id,1)
     console.log(id,this.state.data)
     this.setState({data:this.state.data,dataSource: this.ds.cloneWithRows(this.state.data)})
