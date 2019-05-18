@@ -45,7 +45,7 @@ export default class Home extends Component {
       format: 'wav',
       onDone: (path) => {
          var destPath = RNFS.ExternalStorageDirectoryPath + '/Record/' + Utils.getFileName()+'.wav'
-          RNFS.moveFile(path, destPath)
+          RNFS.moveFile(path, destPath).then(this.list())
          .catch((err) => {
           console.log("Error: " + err.message);
          })
